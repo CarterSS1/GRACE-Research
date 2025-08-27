@@ -28,6 +28,7 @@ codegen/
 
 # Cache files
 *.slxc
-
+# large .nc files
+*.nc
 # Cloud based storage dotfile
 .MATLABDriveTag
