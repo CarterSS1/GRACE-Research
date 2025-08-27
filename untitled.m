@@ -9,15 +9,15 @@ V_Mead = table2array(LM(23654:end,2))*1.2335E-6;     % convert to km3 from acre-
 
 %% Get Numbers from GRACE data
 % Read in data from the 9 GRACE mascons
-GSFC_Raw1895 = readtable('GSFC_mscn1895_1_of_9.csv');
-GSFC_Raw1911 = readtable('GSFC_mscn1911_2_of_9.csv');
-GSFC_Raw1912 = readtable('GSFC_mscn1912_3_of_9.csv');
-GSFC_Raw1854 = readtable('GSFC_mscn1854_4_of_9.csv');
-GSFC_Raw1918 = readtable('GSFC_mscn1918_5_of_9.csv');
-GSFC_Raw1919 = readtable('GSFC_mscn1919_6_of_9.csv');
-GSFC_Raw1859 = readtable('GSFC_mscn1859_7_of_9.csv');
-GSFC_Raw1924 = readtable('GSFC_mscn1924_8_of_9.csv');
-GSFC_Raw1925 = readtable('GSFC_mscn1925_9_of_9.csv');
+GSFC_Raw1895 = readtable('DATA/MASCON-DATA/GSFC_mscn1895_1_of_9.csv');
+GSFC_Raw1911 = readtable('DATA/MASCON-DATA/GSFC_mscn1911_2_of_9.csv');
+GSFC_Raw1912 = readtable('DATA/MASCON-DATA/GSFC_mscn1912_3_of_9.csv');
+GSFC_Raw1854 = readtable('DATA/MASCON-DATA/GSFC_mscn1854_4_of_9.csv');
+GSFC_Raw1918 = readtable('DATA/MASCON-DATA/GSFC_mscn1918_5_of_9.csv');
+GSFC_Raw1919 = readtable('DATA/MASCON-DATA/GSFC_mscn1919_6_of_9.csv');
+GSFC_Raw1859 = readtable('DATA/MASCON-DATA/GSFC_mscn1859_7_of_9.csv');
+GSFC_Raw1924 = readtable('DATA/MASCON-DATA/GSFC_mscn1924_8_of_9.csv');
+GSFC_Raw1925 = readtable('DATA/MASCON-DATA/GSFC_mscn1925_9_of_9.csv');
 
 %Create x axis (Same for all 9 mascons)
 GSFCx_Raw = GSFC_Raw1895(13:237,1);
@@ -147,7 +147,7 @@ xlim([2002 2024]);
 % a3 = (Re*1*pi/180)*(cosd(36.5)*Re*1*pi/180)
 
 %% 
-files = dir('GLDAS-Noah-TWS/*.nc');
+files = dir('DATA/GLDAS-Noah-TWS/*.nc');
 name1=fullfile(files(1).folder,files(1).name);
 % ncdisp(name1);
 lat_GLDAS = ncread(name1,'lat');
